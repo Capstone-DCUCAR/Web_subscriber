@@ -23,7 +23,7 @@ def callback(data):
 def listener():
     global pub
     rospy.init_node('listener', anonymous=True)
-    pub = rospy.Publisher('point', PoseStamped, queue_size=10)
+    pub = rospy.Publisher('move_base_simple/goal', PoseStamped, queue_size=10)
     rospy.Subscriber("my_topic", String, callback)
     rospy.spin()
 
